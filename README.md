@@ -20,7 +20,9 @@ python -m http.server 8000
 # Memory
 
 As WASM works in a protected environment (sandbox) and cannot directly access the memory out of it. WASM uses a JavaScript typed array to execute a C program. When the JavaScript "glue code" is loaded, the array representing the WASM memory is automatically instantiated. This can be reviewed through browser console. Type following command in the console:
+
 Module.HEAP8
+
 You can see following image like output.
 ![image](https://user-images.githubusercontent.com/10768241/140510614-21b53344-05bd-46e7-9ba7-ba3ff5da8141.png)
 

@@ -4,14 +4,24 @@ Prerequisites: A program is needed that can compile C source codes to WebAssembl
 Use following command to compile the C file. 
 emcc hello.c -s WASM=1 -o hello.html
 
+emcc is the program you call to compile your C code
 -s WASM=1 — Specifies the wasm output.
 -o hello.html — Specifies it will generate an HTML page to run our code
 
 After running the command following fle will be generated:
 hello.wasm - The binary wasm module code
-hello.js - A JavaScript file containing glue code to translate between the native C functions, and JavaScript/wasm
+hello.js - A JavaScript file containing glue code to translate between the native C functions, and JavaScript/wasm. It is needed to allow JavaScript to call and "communicate" with WASM compiled code. Emscripten generates this automatically to run WASM modules.
 hello.html - An HTML file to load, compile, and instantiate your wasm code, and display its output in the browser
 
 # Hosting the app with a web server
 We will need a web server to display the HTML page in a web browser. For this, we may use the http.server module from Python 3 to host all files in the current directory on port 8000 using the following command:
 python -m http.server 8000
+
+# Memory
+
+As WASM works in a protected environment (sandbox) and cannot directly access the memory out of it. WASM uses a JavaScript typed array to execute a C program. When the JavaScript "glue code" is loaded, the array representing the WASM memory is automatically instantiated. This can be reviewed through browser console. Type following command in the console:
+Module.HEAP8
+You can see following image like output.
+![image](https://user-images.githubusercontent.com/10768241/140510276-95bba4ea-b795-48cb-9277-3237cb0954e2.png)
+
+This is an array of bytes that represents WASM memory and it is written byte by byte.

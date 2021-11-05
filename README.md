@@ -28,4 +28,4 @@ As WASM works in a protected environment (sandbox) and cannot directly access th
 You can see following image like output.
 ![image](https://user-images.githubusercontent.com/10768241/140510614-21b53344-05bd-46e7-9ba7-ba3ff5da8141.png)
 
-This is an array of bytes that represents WASM memory and it is written byte by byte. **HEAP8** shows memory as a composition of 8-bit signed integers. Memory can also be viewed as other memory model, such as, 16-bit signed memory (HEAP16), 32-bit unsigned memory (HEAPU32),  64-bit float memory (HEAPF64).
+This is an array of bytes that represents WASM memory and it is written byte by byte. **HEAP8** shows memory as a composition of 8-bit signed integers. Memory can also be viewed as other memory model, such as, 16-bit signed memory (HEAP16), 32-bit unsigned memory (HEAPU32) or 64-bit float memory (HEAPF64).

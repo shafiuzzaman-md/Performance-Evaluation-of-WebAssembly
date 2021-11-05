@@ -23,4 +23,5 @@ As WASM works in a protected environment (sandbox) and cannot directly access th
 Module.HEAP8
 You can see following image like output.
 ![image](https://user-images.githubusercontent.com/10768241/140510614-21b53344-05bd-46e7-9ba7-ba3ff5da8141.png)
+
 This is an array of bytes that represents WASM memory and it is written byte by byte.

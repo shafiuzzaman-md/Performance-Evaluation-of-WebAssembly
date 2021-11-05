@@ -16,6 +16,7 @@ hello.html - An HTML file to load, compile, and instantiate your wasm code, and 
 
 # Hosting the app with a web server
 We will need a web server to display the HTML page in a web browser. For this, we may use the http.server module from Python 3 to host all files in the current directory on port 8000 using the following command:
+
 **python -m http.server 8000**
 
 # Memory

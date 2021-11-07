@@ -18,9 +18,25 @@ You will need a web server to display the HTML page in a web browser. For this, 
 
 **python -m http.server 8000**
 
+# Compiling C to WebAssembly without Emscripten
+
+Although compiling a complex C application to WebAssembly using Emscripten is an effective approach, it comes at the cost of complexity. Because it produces a lot of JavaScript glue code and requires an external tool chain. We can compile C functions to WebAssembly without Emscripten using LLVM only.
+
+*LLVM*
+LLVM is a compiler framework that has a front-end compiler to compile the source code to an intermediate representation (IR). Then a back-end compiler translates the IR to the host’s machine code.
+
+If you are on MacOS, you have to install [homebrew](http://google.com) first. Use following commands to install LLVM:
+
+$ brew install llvm
+
+$ brew link --force llvm
+
+$ llc --version (Check the installation)
+
+
 # Memory
 
-WebAssembly works in a protected environment (sandbox) and cannot directly access the memory out of it. It uses a JavaScript typed array (a single contagious address space) as its memory model. When the JavaScript "glue code" is loaded, the array representing the WASM memory is automatically instantiated. 
+WebAssembly works in a protected environment (sandbox) and cannot directly access the memory out of it. It uses a JavaScript typed array (a single contagious address space) as its memory model (called as linear memory). When the JavaScript "glue code" is loaded, the array representing the WASM memory is automatically instantiated. 
 
 This can be viewed through browser console. Type following command in the console:
 
@@ -29,6 +45,6 @@ This can be viewed through browser console. Type following command in the consol
 You can see following image like output.
 ![image](https://user-images.githubusercontent.com/10768241/140510614-21b53344-05bd-46e7-9ba7-ba3ff5da8141.png)
 
-*HEAP8* shows memory as a composition of 8-bit signed integers. Memory can also be viewed as other memory model, such as, 16-bit signed memory (*HEAP1*), 32-bit unsigned memory (*HEAPU32*) or 64-bit float memory (*HEAPF64*). Though the array (the C memory) always contains the data in same manner, we can look at it in different ways in order to work with different data types. WASM memory can be read from and stored into by both Wasm and JavaScript.
+*HEAP8* shows memory as a composition of 8-bit signed integers. Memory can also be viewed as other memory model, such as, 16-bit signed memory (*HEAP1*), 32-bit unsigned memory (*HEAPU32*) or 64-bit float memory (*HEAPF64*). Though the array always contains the data in same manner, we can look at it in different ways in order to work with different data types. WASM memory is an expandable array of bytes that JavaScript and Wasm can synchronously read and modify.
 
 

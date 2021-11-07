@@ -27,11 +27,19 @@ LLVM is a compiler framework that has a front-end compiler to compile the source
 
 If you are on MacOS, you have to install [homebrew](http://google.com) first. Use following commands to install LLVM:
 
-$ brew install llvm
+brew install llvm
 
-$ brew link --force llvm
+brew link --force llvm
 
-$ llc --version (Check the installation)
+llc --version (Check the installation)
+
+Turning C code into IR
+
+add.c file contains a function. LLVM front-end compiler clang can compile it to IR using following command:
+
+clang --target=wasm32 -emit-llvm -c -S add.c
+
+A new file named add.II will be created with the intermadiate representation of C source code. 
 
 
 # Memory

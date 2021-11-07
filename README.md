@@ -14,8 +14,7 @@ hello.wasm - The binary wasm module code
 hello.js - A JavaScript file containing glue code to translate between the native C functions, and JavaScript/wasm. It is needed to allow JavaScript to call and "communicate" with WASM compiled code. Emscripten generates this automatically to run WASM modules.
 hello.html - An HTML file to load, compile, and instantiate your wasm code, and display its output in the browser
 
-# Hosting the app with a web server
-We will need a web server to display the HTML page in a web browser. For this, we may use the http.server module from Python 3 to host all files in the current directory on port 8000 using the following command:
+You will need a web server to display the HTML page in a web browser. For this, we may use the http.server module from Python 3 to host all files in the current directory on port 8000 using the following command:
 
 **python -m http.server 8000**
 

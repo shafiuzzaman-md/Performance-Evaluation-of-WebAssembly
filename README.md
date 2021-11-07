@@ -20,7 +20,7 @@ You will need a web server to display the HTML page in a web browser. For this, 
 
 # Memory
 
-As WASM works in a protected environment (sandbox) and cannot directly access the memory out of it. WASM uses a JavaScript typed array to execute a C program. When the JavaScript "glue code" is loaded, the array representing the WASM memory is automatically instantiated. This can be reviewed through browser console. Type following command in the console:
+WASM works in a protected environment (sandbox) and cannot directly access the memory out of it. WASM uses a JavaScript typed array to execute a C program. When the JavaScript "glue code" is loaded, the array representing the WASM memory is automatically instantiated. This can be reviewed through browser console. Type following command in the console:
 
 **Module.HEAP8**
 

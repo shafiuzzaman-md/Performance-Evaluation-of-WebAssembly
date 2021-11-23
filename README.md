@@ -55,4 +55,11 @@ You can see following image like output.
 
 *HEAP8* shows memory as a composition of 8-bit signed integers. Memory can also be viewed as other memory model, such as, 16-bit signed memory (*HEAP1*), 32-bit unsigned memory (*HEAPU32*) or 64-bit float memory (*HEAPF64*). Though the array always contains the data in same manner, we can look at it in different ways in order to work with different data types. WASM memory is an expandable array of bytes that JavaScript and Wasm can synchronously read and modify.
 
+# Resources
 
+https://github.com/zandaqo/iswasmfast
+
+# Papers
+
+Not So Fast: Analyzing the Performance of WebAssembly vs. Native Code
+https://www.usenix.org/conference/atc19/presentation/jangda

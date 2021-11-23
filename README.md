@@ -59,7 +59,12 @@ You can see following image like output.
 
 https://github.com/zandaqo/iswasmfast
 
+https://github.com/plasma-umass/browsix-emscripten
+
 # Papers
 
 Not So Fast: Analyzing the Performance of WebAssembly vs. Native Code
 https://www.usenix.org/conference/atc19/presentation/jangda
+
+
+

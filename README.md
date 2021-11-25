@@ -55,6 +55,15 @@ You can see following image like output.
 
 *HEAP8* shows memory as a composition of 8-bit signed integers. Memory can also be viewed as other memory model, such as, 16-bit signed memory (*HEAP1*), 32-bit unsigned memory (*HEAPU32*) or 64-bit float memory (*HEAPF64*). Though the array always contains the data in same manner, we can look at it in different ways in order to work with different data types. WASM memory is an expandable array of bytes that JavaScript and Wasm can synchronously read and modify.
 
+# Performance comparison of WebAssembly and native implementations
+
+We used [iswasmfast](https://github.com/zandaqo/iswasmfast) to compare the performance of WebAssembly and native implementations.  [iswasmfast](https://github.com/zandaqo/iswasmfast) uses off-the-shelf C++ implementations of various algorithms (.cpp files in lib folder) integrating them into Node.js as a WebAssembly module. C++ code are complied to a WebAssembly module using Emscripten. The performance of the WebAssembly module, and native implementations in JavaScript (*.js files in lib) is compared in a[benchmark](https://www.npmjs.com/package/benchmark). Use following command to istall the benchmark.
+
+**npm i --save benchmark**
+
+If you run the benchmark, you may get following results:
+
+
 # Resources
 
 https://github.com/zandaqo/iswasmfast

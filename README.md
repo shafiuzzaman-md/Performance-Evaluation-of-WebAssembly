@@ -62,6 +62,7 @@ We used [iswasmfast](https://github.com/zandaqo/iswasmfast) to compare the perfo
 **npm i --save benchmark**
 
 If you run the benchmark, you may get following results:
+![Screenshot from 2021-11-25 19-18-28](https://user-images.githubusercontent.com/10768241/143521694-4b62beaf-c15a-40b6-944a-15e895f10aea.png)
 
 
 # Resources

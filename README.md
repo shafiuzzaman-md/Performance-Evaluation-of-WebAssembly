@@ -57,7 +57,7 @@ You can see following image like output.
 
 # Performance comparison of WebAssembly and native implementations
 
-We used [iswasmfast](https://github.com/zandaqo/iswasmfast) to compare the performance of WebAssembly and native implementations.  [iswasmfast](https://github.com/zandaqo/iswasmfast) uses off-the-shelf C++ implementations of various algorithms (.cpp files in lib folder) integrating them into Node.js as a WebAssembly module. C++ code are complied to a WebAssembly module using Emscripten. The performance of the WebAssembly module, and native implementations in JavaScript (*.js files in lib) is compared in a[benchmark](https://www.npmjs.com/package/benchmark). Use following command to istall the benchmark.
+We used [iswasmfast](https://github.com/zandaqo/iswasmfast) to compare the performance of WebAssembly and native implementations.  [iswasmfast](https://github.com/zandaqo/iswasmfast) uses off-the-shelf C++ implementations of various algorithms (.cpp files in lib folder) integrating them into Node.js as a WebAssembly module. C++ code are complied to a WebAssembly module using Emscripten. The performance of the WebAssembly module, and native implementations in JavaScript (*.js files in lib) is compared in a [benchmark](https://www.npmjs.com/package/benchmark). Use following command to istall the benchmark.
 
 **npm i --save benchmark**
 
